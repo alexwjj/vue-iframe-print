@@ -1,5 +1,5 @@
 export default class {
-  constructor (option) {
+  constructor(option) {
     this.standards = {
       strict: 'strict',
       loose: 'loose',
@@ -21,7 +21,7 @@ export default class {
     this.init();
   }
 
-  init () {
+  init() {
     this.counter++;
     this.settings.id = `printArea_${this.counter}`;
     const PrintAreaWindow = this.getPrintWindow(); // 创建iframe
@@ -30,7 +30,7 @@ export default class {
     this.settings.endCallback();
   }
 
-  print (PAWindow) {
+  print(PAWindow) {
     const paWindow = PAWindow.win;
     const _loaded = () => {
       paWindow.focus();
@@ -73,7 +73,7 @@ export default class {
           }
         }
       }
-      const ids = this.settings.ids.replace(new RegExp('#', 'g'), ''); ;
+      const ids = this.settings.ids.replace(new RegExp('#', 'g'), '');
       var el = document.getElementById(ids);
       var iframe = document.createElement('iframe');
       var doc = null;
@@ -94,13 +94,13 @@ export default class {
     }
   }
 
-  write (PADocument, $ele) {
+  write(PADocument, $ele) {
     PADocument.open();
     PADocument.write(`${this.docType()}<html>${this.getHead()}${this.getBody()}</html>`);
     PADocument.close();
   }
 
-  docType () {
+  docType() {
     if (this.settings.standard === this.standards.html5) {
       return '<!DOCTYPE html>';
     }
@@ -110,7 +110,7 @@ export default class {
     return `<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01${transitional}//EN" "http://www.w3.org/TR/html4/${dtd}.dtd">`;
   }
 
-  getHead () {
+  getHead() {
     let extraHead = '';
     let links = '';
     let style = '';
@@ -156,7 +156,7 @@ export default class {
     return `<head><title>${this.settings.popTitle}</title>${extraHead}${links}<style type="text/css">${style}</style></head>`;
   }
 
-  getBody () {
+  getBody() {
     let ids = this.settings.ids;
     ids = ids.replace(new RegExp('#', 'g'), '');
     const elsdom = document.getElementById(ids);
@@ -166,7 +166,7 @@ export default class {
   }
 
   // 根据type去处理form表单
-  getFormData (ele) {
+  getFormData(ele) {
     // let copy = ele.cloneNode(true);
     const copiedInputs = ele.querySelectorAll('input,select,textarea');
     let selectCount = -1;
@@ -213,7 +213,7 @@ export default class {
     return ele;
   }
 
-  getPrintWindow () {
+  getPrintWindow() {
     var f = this.Iframe();
     return {
       f: f,
@@ -222,7 +222,7 @@ export default class {
     };
   }
 
-  Iframe () {
+  Iframe() {
     const frameId = this.settings.id;
     let iframe;
 
