@@ -15,7 +15,7 @@ Vue.use(Print);
 ```
 ## 示例
 
-[在线打印示例](http://118.25.49.69)
+[在线打印示例](https://alexwjj.github.io/vue-iframe-print)
 
 你也可以克隆下来本地跑一下
 
