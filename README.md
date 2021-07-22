@@ -1,7 +1,8 @@
 # vue-iframe-print
 
-基于 iframe 打印的小工具
+基于 iframe 打印的小工具，原版有些bug，修复了下
 
+[原版地址 vue-print-nb](https://github.com/Power-kxLee/vue-print-nb)
 ## 安装
 
 ```bash
@@ -73,6 +74,3 @@ export default {
 * `extraCss`:  扩展 css
 * `popTitle`:  标题
 * `endCallback()`: 打印成功后回调
-## License
-
-[MIT](http://opensource.org/licenses/MIT)
